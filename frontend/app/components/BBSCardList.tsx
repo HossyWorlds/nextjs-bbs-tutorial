@@ -1,12 +1,17 @@
 import React from 'react'
 import BBSCard from './BBSCard';
+import { Post } from '../types/post';
 
-const BBSCardList = () => {
+type BBSCardListProps = {
+    posts: Post[]
+}
+
+const BBSCardList = ({ posts }: BBSCardListProps) => {
     return (
         <>
-            <BBSCard />
-            <BBSCard />
-            <BBSCard />
+            {posts.map((post) => (
+                <BBSCard key={post.id} post={post} />
+            ))}
         </>
     )
 }
