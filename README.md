@@ -1,6 +1,6 @@
 # nextjs-bbs-tutorial
 
-進捗度: [51:00](https://youtu.be/8b6iqmo_2Os?si=zJLtmNTVQA-2voZN&t=3060)
+進捗度: [1:00:59](https://youtu.be/8b6iqmo_2Os?si=Hzcwz3shaeVQG22r&t=3659)
 - youtubeリンク: https://youtu.be/8b6iqmo_2Os?si=645wPJs8hKd_z4PV
 - githubリンク: https://github.com/Shin-sibainu/bbs-with-nextjs
 
