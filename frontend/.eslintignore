@@ -1,9 +1,0 @@
-**/lib/generated/**
-**/lib/prisma/**
-**/lib/wasm*
-**/node_modules/**
-**/.next/**
-**/dist/**
-**/build/**
-**/out/**
-**/public/**
