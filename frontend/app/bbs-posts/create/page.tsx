@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -16,6 +16,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { createPost } from "@/app/actions/createPost";
 
 const formSchema = z.object({
   title: z.string().min(1, { message: "タイトルは必須です" }),
@@ -26,7 +27,7 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 const CreatePostPage = () => {
-  const router = useRouter();
+//   const router = useRouter();
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: { title: "", username: "", content: "" },
@@ -54,6 +55,10 @@ const CreatePostPage = () => {
     //   }
     // }
 //   };
+
+  const onSubmit = async (values: FormValues) => {
+    await createPost(values);
+  };
 
   return (
     <div className="max-w-2xl mx-auto p-8">
