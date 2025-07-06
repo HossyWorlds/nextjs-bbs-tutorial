@@ -32,27 +32,28 @@ const CreatePostPage = () => {
     defaultValues: { title: "", username: "", content: "" },
   });
 
-  const onSubmit = async (values: FormValues) => {
-    try {
-      const res = await fetch("/api/post", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
-      });
-      if (!res.ok) {
-        throw new Error("投稿に失敗しました");
-      }
-      router.push("/");
-    } catch (err: unknown) {
-      if (typeof err === "string") {
-        form.setError("root", { message: err });
-      } else if (err instanceof Error) {
-        form.setError("root", { message: err.message });
-      } else {
-        form.setError("root", { message: "エラーが発生しました" });
-      }
-    }
-  };
+  // TODO: server actionで実装する（このコメントアウトは消さない）
+//   const onSubmit = async (values: FormValues) => {
+    // try {
+    //   const res = await fetch("/api/post", {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify(values),
+    //   });
+    //   if (!res.ok) {
+    //     throw new Error("投稿に失敗しました");
+    //   }
+    //   router.push("/");
+    // } catch (err: unknown) {
+    //   if (typeof err === "string") {
+    //     form.setError("root", { message: err });
+    //   } else if (err instanceof Error) {
+    //     form.setError("root", { message: err.message });
+    //   } else {
+    //     form.setError("root", { message: "エラーが発生しました" });
+    //   }
+    // }
+//   };
 
   return (
     <div className="max-w-2xl mx-auto p-8">
